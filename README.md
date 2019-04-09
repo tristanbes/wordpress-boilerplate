@@ -7,6 +7,7 @@ This project is here to illustrate almost everything I'm talking inside my blog 
 You can find inside this repository examples of
 - The Bedrock structure
 - Environment variables
-- Usage of [`yProx-CLI`](https://github.com/Yproximite/yProx-cli)
+- PHP-CS-Fixer pre-configured and ready to use
+- Usage of [`yProx-CLI`](https://github.com/Yproximite/yProx-cli) to lint & build JS, CSS and images
 - Usage of Timber, which allow to user Twig as a templating system. See their [Sarter theme there](https://github.com/timber/starter-theme)
 
