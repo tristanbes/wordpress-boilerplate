@@ -1,0 +1,35 @@
+dist: trusty
+
+language: php
+php:
+  - '7.3'
+
+notifications:
+  email: false
+
+cache:
+  yarn: true
+  directories:
+    - ./vendor
+    - ./node_modules
+    - ~/.composer/cache/files
+
+before_install:
+  - |
+    if [ -f "package.json" ]; then
+        set -e # properly fails Travis if one of the following commands fails
+        nvm install v10
+        nvm use 10
+        node --version
+        npm --version
+        npm install --global yarn
+        set +e # re-enable previous behaviour
+    fi
+
+script:
+  - composer validate
+  - composer install
+  - vendor/bin/php-cs-fixer fix -v --dry-run --using-cache=no
+  - if [ -f "package.json" ]; then yarn install; fi;
+  - if [ -f "package.json" ]; then yarn lint; fi;
+  - if [ -f "package.json" ]; then yarn build; fi;

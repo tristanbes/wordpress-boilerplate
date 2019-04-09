@@ -1,0 +1,43 @@
+# Application
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
+/web/app/languages/*
+!web/app/languages/.gitkeep
+
+# WordPress
+web/wp
+web/.htaccess
+
+# Themes
+!web/app/themes/*/dist/.gitkeep
+!web/app/themes/*/dist/.gitkeep
+web/app/themes/*/dist/*
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Composer
+/vendor
+
+# JS deps
+/node_modules
+
+# WP-CLI
+wp-cli.local.yml
+
+# ignore other files
+/.htaccess
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz
+*.log
+/web/app/mu-plugins/wp-migrate-db-pro-compatibility.php
+/web/app/mu-plugins/0-worker.php
+.php_cs.cache

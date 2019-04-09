@@ -1,0 +1,22 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+    {% if post.blog_text %}
+        <div class="content__intro">
+            {{ post.blog_text }}
+        </div>
+    {% endif %}
+
+    <section class="content__article content__article--{{ template }}">
+        <div class="content__article-content">
+            <div class="teasers">
+                {% for post in posts %}
+                    {% include ['partial/components/tease-' ~ post.post_type ~ '.twig', 'partial/components/tease.twig'] %}
+                {% endfor %}
+            </div>
+
+            {% include 'partial/components/pagination.twig' with { 'pagination': posts.pagination( { show_all: false, mid_size: 3, end_size: 2 } ) } %}
+        </div>
+    </section>
+{% endblock %}

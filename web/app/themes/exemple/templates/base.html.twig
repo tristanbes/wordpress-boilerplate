@@ -1,0 +1,49 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+    <body class="site {{ body_class }}">
+        <a class="skip-link" href="#content">{{ _e( 'Skip to content') }}</a>
+
+        <header class="header">
+            {% block header %}
+            {% endblock %}
+        </header>
+
+        <div id="content" class="content">
+            <div class="content__wrapper content__wrapper--{{ template }}">
+                <main class="content__main content__main--{{ template }}">
+                    {% block breadcrumb %}
+                    {% endblock %}
+
+                    {% block content_header %}
+                        {% if title %}
+                            <header class="content__header">
+                                <h1 class="content__title">{{ title }}</h1>
+                            </header>
+                        {% endif %}
+                    {% endblock %}
+
+                    {% block content %}
+                        <div class="content__article">
+                            <section class="content__article-content">
+                                <p>Sorry, no content</p>
+                            </section>
+                        </div>
+                    {% endblock %}
+                </main>
+
+            </div>
+        </div>
+
+        {% block footer %}
+            <footer class="footer">
+            </footer>
+            {{ fn('wp_footer') }}
+        {% endblock %}
+    </body>
+</html>
