@@ -1,4 +1,4 @@
-const rootPath = './web/app/themes/exemple';
+const rootPath = './web/app/themes/example';
 const paths = {
   src: rootPath + '/src',
   dist: rootPath + '/dist',
